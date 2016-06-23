@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C243997-4766-4BA0-AD29-93C6214852C2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OutlineWF</RootNamespace>
+    <AssemblyName>OutlineWF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Detail.cs" />
+    <Compile Include="Tests\Utilities\RayTest.cs" />
+    <Compile Include="Utilities\FloatExtension.cs" />
+    <Compile Include="Utilities\Ray.cs" />
+    <Compile Include="Views\DetailEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DetailEditForm.Designer.cs">
+      <DependentUpon>DetailEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Part.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Models\PartTest.cs" />
+    <Compile Include="Tests\Utilities\LineTest.cs" />
+    <Compile Include="Tests\Utilities\PointTest.cs" />
+    <Compile Include="Utilities\Gdi32.cs" />
+    <Compile Include="Utilities\IntegerExtension.cs" />
+    <Compile Include="Utilities\Line.cs" />
+    <Compile Include="Utilities\Linq.cs" />
+    <Compile Include="Utilities\Point.cs" />
+    <Compile Include="Utilities\PointExtension.cs" />
+    <Compile Include="Utilities\XorDrawing.cs" />
+    <Compile Include="Views\EquidistantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EquidistantForm.Designer.cs">
+      <DependentUpon>EquidistantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Operations\AddOperation.cs" />
+    <Compile Include="Views\Operations\BasicSplineSmoothOperation.cs" />
+    <Compile Include="Views\Operations\ConjurationOperation.cs" />
+    <Compile Include="Views\Operations\DeleteOperation.cs" />
+    <Compile Include="Views\Operations\InterSpineSmoothOperation.cs" />
+    <Compile Include="Views\Operations\IOperationContext.cs" />
+    <Compile Include="Views\Operations\IOperationState.cs" />
+    <Compile Include="Views\Operations\MoveOperation.cs" />
+    <Compile Include="Views\Operations\Operation.cs" />
+    <Compile Include="Views\Operations\SmoothOperation.cs" />
+    <Compile Include="Views\PartDrawContext.cs" />
+    <Compile Include="Views\SerialGraduationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SerialGraduationForm.Designer.cs">
+      <DependentUpon>SerialGraduationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Tabs\DetailEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\Tabs\DetailEdit.Designer.cs">
+      <DependentUpon>DetailEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\Tabs\IDetailControl.cs" />
+    <Compile Include="Views\UserControls\Tabs\IWireframeControl.cs" />
+    <Compile Include="Views\UserControls\Components\PartListView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\Components\PartListView.Designer.cs">
+      <DependentUpon>PartListView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Utils\UserTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\Tabs\Wireframe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\Tabs\Wireframe.Designer.cs">
+      <DependentUpon>Wireframe.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\DetailEditForm.resx">
+      <DependentUpon>DetailEditForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\EquidistantForm.resx">
+      <DependentUpon>EquidistantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SerialGraduationForm.resx">
+      <DependentUpon>SerialGraduationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\Tabs\DetailEdit.resx">
+      <DependentUpon>DetailEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\Components\PartListView.resx">
+      <DependentUpon>PartListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\Tabs\Wireframe.resx">
+      <DependentUpon>Wireframe.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\P4.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Serialization\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
